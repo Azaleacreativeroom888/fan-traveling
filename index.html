@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>たびまなび｜旅行の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sun:#FFD93D; --sun-soft:#FFF1A8; --orange:#FF8A1F; --orange-deep:#E8590C;
+  --ink:#4A2A0A; --paper:#FFFBEA; --sky:#BDE8F5;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:var(--sun-soft);line-height:1.8;font-weight:500}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:14px max(20px,5vw);background:var(--orange)}
+.logo{font-weight:900;font-size:1.4rem;text-decoration:none;color:var(--paper)}
+nav ul{list-style:none;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:4px 16px;border-radius:99px;text-decoration:none;font-weight:700;color:var(--paper)}
+nav a:hover,nav a[aria-current]{background:var(--paper);color:var(--orange-deep)}
+
+.hero{background:linear-gradient(180deg,var(--sun) 0%,var(--sun-soft) 100%);padding:48px max(20px,5vw) 0;overflow:hidden}
+.hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.hero h1{font-weight:900;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.2;color:var(--orange-deep)}
+.hero p{margin:16px 0 28px;max-width:30em;font-size:1.05rem}
+.btn{display:inline-block;padding:12px 28px;border-radius:99px;background:var(--orange-deep);color:var(--paper);font-weight:900;text-decoration:none;box-shadow:0 5px 0 #A83D05;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 #A83D05}
+.btn.sub{background:var(--paper);color:var(--orange-deep);box-shadow:0 5px 0 #E0B84A;margin-left:8px}
+.btn.sub:hover{box-shadow:0 2px 0 #E0B84A}
+.route{width:100%;height:auto;display:block}
+.plane{animation:fly 5s ease-in-out infinite alternate;transform-origin:center}
+@keyframes fly{to{transform:translate(10px,-12px) rotate(-4deg)}}
+.hills{display:block;width:100%;height:60px;margin-top:-4px}
+
+main{max-width:1000px;margin:0 auto;padding:56px max(20px,5vw) 40px}
+h2{font-size:1.7rem;font-weight:900;color:var(--orange-deep);margin-bottom:6px}
+.lead{margin-bottom:24px}
+section+section{margin-top:64px}
+
+.tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.tag{background:var(--paper);border:3px dashed var(--orange);border-radius:20px;padding:20px;position:relative}
+.tag:nth-child(even){background:#FFE3B8;transform:rotate(1deg)}
+.tag:nth-child(odd){transform:rotate(-1deg)}
+.tag h3{font-size:1.15rem;font-weight:900;margin-bottom:4px}
+.tag .ico{font-size:2rem;line-height:1}
+.tag p{font-size:.92rem}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--paper);border-radius:24px;padding:24px;box-shadow:0 6px 0 var(--orange)}
+.panel h2{font-size:1.3rem}
+.post{padding:12px 0;border-top:2px dotted var(--orange)}
+.post:first-of-type{border-top:0}
+.post time{font-size:.85rem;font-weight:700;color:var(--orange-deep)}
+.more{display:inline-block;margin-top:10px;font-weight:900;color:var(--orange-deep)}
+.col-item{display:flex;gap:12px;padding:10px 0;align-items:flex-start}
+.col-item b{display:block}
+.thumb{flex:none;width:56px;height:56px;border-radius:14px;background:var(--sun);display:grid;place-items:center;font-size:1.6rem}
+
+footer{background:var(--orange);color:var(--paper);text-align:center;padding:24px 20px;font-weight:700}
+
+@media (max-width:720px){
+  .hero-inner,.two{grid-template-columns:1fr}
+  .btn.sub{margin:12px 0 0}
+}
+@media (prefers-reduced-motion:reduce){.plane{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">✈ たびまなび</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html" aria-current="page">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="column.html">コラム</a></li>
+      <li><a href="about.html">about</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>旅を、<br>まなぼう。</h1>
+      <p>行きたい場所のことを知るほど、旅はもっと楽しくなる。地理も文化も言葉もお金も、ゆるっと学んだ記録をここに置いています。</p>
+      <a class="btn" href="blog.html">勉強の記録を見る</a>
+      <a class="btn sub" href="column.html">コラムを読む</a>
+    </div>
+    <svg class="route" viewBox="0 0 420 300" role="img" aria-label="点線の航路を飛ぶ飛行機と、3つの目的地ピン">
+      <circle cx="330" cy="62" r="40" fill="#FFB020"/>
+      <g fill="#fff" opacity=".9">
+        <ellipse cx="90" cy="60" rx="42" ry="14"/><ellipse cx="116" cy="50" rx="26" ry="14"/>
+        <ellipse cx="250" cy="120" rx="36" ry="11"/><ellipse cx="270" cy="111" rx="20" ry="11"/>
+      </g>
+      <path d="M30 250 C 100 140, 180 260, 240 170 S 360 90, 390 120" fill="none" stroke="#E8590C" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/>
+      <g fill="#E8590C">
+        <path d="M30 250 m0 -26 a14 14 0 1 1 .01 0 z"/>
+        <path d="M240 170 m0 -26 a14 14 0 1 1 .01 0 z"/>
+      </g>
+      <g fill="#FFFBEA"><circle cx="30" cy="219" r="5"/><circle cx="240" cy="139" r="5"/></g>
+      <g class="plane">
+        <text x="330" y="118" font-size="46" text-anchor="middle">✈️</text>
+      </g>
+      <rect x="20" y="265" width="380" height="14" rx="7" fill="#FFB020" opacity=".0"/>
+    </svg>
+  </div>
+  <svg class="hills" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 L0 30 Q120 0 260 28 T520 24 T780 30 T1000 18 L1000 60Z" fill="#FF8A1F"/>
+    <path d="M0 60 L0 44 Q150 20 320 44 T640 42 T1000 38 L1000 60Z" fill="#FFF1A8"/>
+  </svg>
+</div>
+
+<main>
+  <section>
+    <h2>このサイトで学ぶこと</h2>
+    <p class="lead">旅の前に知っておくと楽しさが倍になる、4つのテーマ。</p>
+    <div class="tags">
+      <div class="tag"><div class="ico">🗺️</div><h3>地理と歴史</h3><p>どこに何があって、なぜそこが特別なのか。場所の背景を知る。</p></div>
+      <div class="tag"><div class="ico">🍜</div><h3>文化と食べもの</h3><p>その土地ならではの習慣やごはん、お祭りを調べる。</p></div>
+      <div class="tag"><div class="ico">💬</div><h3>旅行の言葉</h3><p>あいさつや注文など、現地で使える表現を身につける。</p></div>
+      <div class="tag"><div class="ico">🎒</div><h3>計画とお金と安全</h3><p>予算の立て方、持ち物、トラブルへの備えをまとめる。</p></div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="panel">
+      <h2>ブログ（勉強の進捗）</h2>
+      <div class="post"><time datetime="2026-10-01">2026.10.01</time><p>サイトを作り始めた！まずはトップページから。</p></div>
+      <div class="post"><time datetime="2026-09-30">2026.09.30</time><p>行ってみたい国をリストアップ。意外とたくさんあった。</p></div>
+      <a class="more" href="blog.html">ブログをもっと見る</a>
+    </div>
+    <div class="panel">
+      <h2>コラム</h2>
+      <div class="col-item"><div class="thumb">📖</div><div><b>旅の4コマ</b>旅先でありがちな出来事を漫画に。</div></div>
+      <div class="col-item"><div class="thumb">🖼️</div><div><b>旅のイラスト</b>行きたい場所を描いたイラスト集。</div></div>
+      <div class="col-item"><div class="thumb">✏️</div><div><b>ミニ小論文</b>旅について考えたことを軽くまとめた記事。</div></div>
+      <a class="more" href="column.html">コラムをもっと見る</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© たびまなび ／ <a href="about.html">このサイトについて</a></p>
+</footer>
+
+</body>
+</html>
